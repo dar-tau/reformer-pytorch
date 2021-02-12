@@ -1,4 +1,7 @@
-from reformer_pytorch import ReformerLM
+import sys
+sys.path.insert(0,'../..')
+
+from reformer_pytorch.reformer_pytorch import ReformerLM
 from reformer_pytorch.generative_tools import TrainingWrapper
 
 import random
@@ -53,7 +56,7 @@ model = ReformerLM(
 )
 
 model = TrainingWrapper(model)
-model.cuda()
+# model.cuda()
 
 # prepare enwik8 data
 
@@ -71,7 +74,7 @@ class TextSamplerDataset(Dataset):
     def __getitem__(self, index):
         rand_start = torch.randint(0, self.data.size(0) - self.seq_len - 1, (1,))
         full_seq = self.data[rand_start: rand_start + self.seq_len + 1].long()
-        return full_seq.cuda()
+        return full_seq#.cuda()
 
     def __len__(self):
         return self.data.size(0) // self.seq_len

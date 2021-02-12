@@ -8,7 +8,7 @@ setup(
   description = 'Reformer, the Efficient Transformer, Pytorch',
   author = 'Phil Wang',
   author_email = 'lucidrains@gmail.com',
-  url = 'https://github.com/lucidrains/reformer-pytorch',
+  url = 'https://github.com/dar-tau/reformer-pytorch',
   keywords = ['transformers', 'attention', 'artificial intelligence'],
   install_requires=[
       'torch',
